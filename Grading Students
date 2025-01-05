@@ -1,0 +1,37 @@
+4
+73
+67
+38
+33
+
+Output
+75
+67
+40
+33
+
+public static List<Integer> gradingStudents(List<Integer> grades) {
+      ArrayList<Integer>al=new ArrayList<>(); // 73 67 38 33
+        for(int i=0; i<grades.size(); i++){
+            int mark=grades.get(i); // 73
+            if(mark<38){
+                al.add(mark);
+            }
+            else{
+                int multi=(mark/5)+1; 73/5=14+1= 15
+                int mulOf5=multi*5; // 75
+                int diff=mulOf5-mark; // 75-73=2
+                
+                if(diff<3){
+                    al.add(mulOf5); // so add 75
+                }
+                else{
+                    al.add(mark);
+                }
+            }
+        }
+        return al;
+        
+    }
+
+}
