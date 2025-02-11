@@ -1,0 +1,49 @@
+// Original alphabet:      abcdefghijklmnopqrstuvwxyz
+Alphabet rotated +3:    defghijklmnopqrstuvwxyzabc
+
+// 11
+middle-Outz
+2
+Sample Output
+okffng-Qwvb
+
+//Original alphabet:      abcdefghijklmnopqrstuvwxyz
+Alphabet rotated +2:    cdefghijklmnopqrstuvwxyzab
+
+m -> o
+i -> k
+d -> f
+d -> f
+l -> n
+e -> g
+-    -
+O -> Q
+u -> w
+t -> v
+z -> b
+
+//code 
+ public static String caesarCipher(String s, int k) {
+       k=k%26;
+        StringBuilder sb= new StringBuilder();
+        for(char ch: s.toCharArray()){
+            //use uppercase latter
+            if(ch>='A' && ch<='Z'){
+                sb.append((char)('A'+(ch-'A'+k)%26));
+            }
+            else if(ch>='a' && ch<='z'){
+                //use lower case latter
+                sb.append((char)('a'+(ch-'a'+k)%26));
+            }
+            else{
+                // non alphabetic
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
+
+    }
+
+}
+
+
