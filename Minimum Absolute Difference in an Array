@@ -1,0 +1,22 @@
+Minimum Absolute Difference in an Array
+
+|a-b|or |b-a| value is minimum
+
+[3,-7,0] output =3
+
+public static int minimumAbsoluteDifference(List<Integer> arr) {
+      
+        Integer min=Integer.MAX_VALUE;
+        
+        Collections.sort(arr);
+        for(int i=1; i<arr.size(); i++){
+            int diff=Math.abs(arr.get(i-1)-arr.get(i));
+            if(diff<min){
+                min=diff;
+            }
+        }
+        return min;
+
+    }
+
+}
